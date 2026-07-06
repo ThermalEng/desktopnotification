@@ -1,0 +1,21 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Name": "mc",
+                "Email": "wcysylmc@126.com"
+            }
+        ],
+        "Category": "System Information",
+        "Description": "Display recent system notifications with app icons, titles, bodies, timestamps, and a configurable dismiss button.",
+        "Icon": "notifications",
+        "Id": "desktopnotification",
+        "License": "MIT",
+        "Name": "Desktop Notification",
+        "Version": "1.0.0",
+        "Website": "https://github.com/ThermalEng"
+    },
+    "KPackageStructure": "Plasma/Applet",
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "X-Plasma-API-Maximum-Version": "7.99"
+}
