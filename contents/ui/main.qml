@@ -260,7 +260,7 @@ PlasmoidItem {
                         bodyText: model.body || ""
                         appName: model.applicationName || ""
                         desktopEntry: model.desktopEntry || ""
-                        appIcon: model.applicationIconName || model.iconName || "applications-system"
+                        appIcon: model.iconName || model.applicationIconName || "applications-system"
                         actionNames: model.actionNames || []
                         actionLabels: model.actionLabels || []
                         defaultActionLabel: model.defaultActionLabel || ""
@@ -403,7 +403,7 @@ PlasmoidItem {
                             bodyText: model.body || ""
                             appName: model.applicationName || ""
                             desktopEntry: model.desktopEntry || ""
-                            appIcon: model.applicationIconName || model.iconName || "applications-system"
+                            appIcon: model.iconName || model.applicationIconName || "applications-system"
                             actionNames: model.actionNames || []
                             actionLabels: model.actionLabels || []
                             defaultActionLabel: model.defaultActionLabel || ""

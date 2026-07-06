@@ -122,7 +122,6 @@ Item {
                 implicitWidth: Math.round(36 * itemRoot.scaleFactor)
                 implicitHeight: Math.round(36 * itemRoot.scaleFactor)
                 Layout.alignment: Qt.AlignVCenter
-                color: rootRef.textPrimary
             }
 
             // ===== 标题/正文/关闭 =====
