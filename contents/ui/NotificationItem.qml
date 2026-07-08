@@ -23,7 +23,7 @@ Item {
     property string bodyText: ""
     property string appName: ""
     property string desktopEntry: ""
-    property string appIcon: "applications-system"
+    property var appIcon: "applications-system"
     property var actionNames: []
     property var actionLabels: []
     property bool hasDefaultAction: false
@@ -119,6 +119,7 @@ Item {
             // ===== 应用图标 =====
             Kirigami.Icon {
                 source: itemRoot.appIcon
+                fallback: "applications-system"
                 implicitWidth: Math.round(36 * itemRoot.scaleFactor)
                 implicitHeight: Math.round(36 * itemRoot.scaleFactor)
                 Layout.alignment: Qt.AlignVCenter

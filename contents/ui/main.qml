@@ -95,6 +95,19 @@ PlasmoidItem {
         return notificationsModel.makePersistentModelIndex(notificationsModel.index(row, 0))
     }
 
+    function notificationIcon(image, iconName, applicationIconName) {
+        if (image) {
+            return image
+        }
+        if (iconName && iconName.length > 0) {
+            return iconName
+        }
+        if (applicationIconName && applicationIconName.length > 0) {
+            return applicationIconName
+        }
+        return "applications-system"
+    }
+
     // ===== 通知数据源（直接挂到 KDE 通知管理器） =====
     NotificationManager.Notifications {
         id: notificationsModel
@@ -260,7 +273,7 @@ PlasmoidItem {
                         bodyText: model.body || ""
                         appName: model.applicationName || ""
                         desktopEntry: model.desktopEntry || ""
-                        appIcon: model.iconName || model.applicationIconName || "applications-system"
+                        appIcon: root.notificationIcon(model.image, model.iconName, model.applicationIconName)
                         actionNames: model.actionNames || []
                         actionLabels: model.actionLabels || []
                         defaultActionLabel: model.defaultActionLabel || ""
@@ -403,7 +416,7 @@ PlasmoidItem {
                             bodyText: model.body || ""
                             appName: model.applicationName || ""
                             desktopEntry: model.desktopEntry || ""
-                            appIcon: model.iconName || model.applicationIconName || "applications-system"
+                            appIcon: root.notificationIcon(model.image, model.iconName, model.applicationIconName)
                             actionNames: model.actionNames || []
                             actionLabels: model.actionLabels || []
                             defaultActionLabel: model.defaultActionLabel || ""
