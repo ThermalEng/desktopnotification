@@ -52,7 +52,7 @@
         </entry>
         <entry name="backgroundOpacity" type="Int">
             <default>92</default>
-            <min>30</min>
+            <min>1</min>
             <max>100</max>
         </entry>
         <entry name="borderEnabled" type="Bool">
@@ -63,6 +63,21 @@
             <min>0</min>
             <max>28</max>
         </entry>
+        <entry name="hideWhenEmpty" type="Bool">
+            <default>true</default>
+        </entry>
+        <entry name="notificationOpacity" type="Int">
+            <default>4</default>
+            <min>0</min>
+            <max>100</max>
+        </entry>
+        <entry name="notificationBgColor" type="String">
+            <default>#ffffff</default>
+        </entry>
+        <entry name="notificationBorderEnabled" type="Bool">
+            <default>true</default>
+        </entry>
+
 
         <entry name="accentColor" type="String">
             <default>#8d5cff</default>

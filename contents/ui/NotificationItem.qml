@@ -16,6 +16,7 @@ Item {
     property var notificationIndex           // QPersistentModelIndex，避免行号变化后点错通知
     property var config                       // Plasmoid.configuration
     property var rootRef                      // 引用 main 的 root 以拿颜色等
+    property var notificationColor
     property bool showActions: true
     property bool showDismissButton: true
 
@@ -104,10 +105,8 @@ Item {
         id: card
         anchors.fill: parent
         radius: config.cornerRadius
-        color: config.backgroundEnabled
-            ? Qt.rgba(1, 1, 1, 0.04)
-            : Qt.rgba(0, 0, 0, 0)
-        border.width: config.borderEnabled && config.backgroundEnabled ? 1 : 0
+        color: notificationColor
+        border.width: config.notificationBorderEnabled ? 1 : 0
         border.color: rootRef.borderCol
 
         RowLayout {
