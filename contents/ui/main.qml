@@ -29,6 +29,8 @@ PlasmoidItem {
 
     readonly property bool backgroundVisible: Plasmoid.configuration.backgroundEnabled
     readonly property color configuredBackgroundColor: Plasmoid.configuration.backgroundColor
+    readonly property color configuredNotificationColor: Plasmoid.configuration.notificationBgColor
+    readonly property color configuredNotificationColorWithOpacity: withAlpha(configuredNotificationColor, Plasmoid.configuration.notificationOpacity)  
     readonly property color panelBg: root.backgroundVisible
         ? withAlpha(root.configuredBackgroundColor, Plasmoid.configuration.backgroundOpacity)
         : "transparent"
@@ -152,7 +154,7 @@ PlasmoidItem {
 
         Rectangle {
             id: capsule
-            visible: notificationsModel.count > 0
+            visible: Plasmoid.configuration.hideWhenEmpty ? notificationsModel.count > 0 : true
             anchors.centerIn: parent
             width: root.compactWidth
             height: root.compactHeight
@@ -210,7 +212,7 @@ PlasmoidItem {
 
         Rectangle {
             id: desktopBg
-            visible: notificationsModel.count > 0
+            visible: Plasmoid.configuration.hideWhenEmpty ? notificationsModel.count > 0 : true
             anchors.fill: parent
             radius: Plasmoid.configuration.cornerRadius
             color: root.panelBg
@@ -283,6 +285,7 @@ PlasmoidItem {
                         notificationIndex: root.persistentNotificationIndex(index)
                         notificationsModel: root.notificationSource
                         config: Plasmoid.configuration
+                        notificationColor: configuredNotificationColorWithOpacity
                         rootRef: root
                         showActions: Plasmoid.configuration.showActions
                         showDismissButton: Plasmoid.configuration.showDismissButton
@@ -426,6 +429,7 @@ PlasmoidItem {
                             notificationIndex: root.persistentNotificationIndex(index)
                             notificationsModel: root.notificationSource
                             config: Plasmoid.configuration
+                            notificationColor: configuredNotificationColorWithOpacity
                             rootRef: root
                             showActions: Plasmoid.configuration.showActions
                             showDismissButton: Plasmoid.configuration.showDismissButton
